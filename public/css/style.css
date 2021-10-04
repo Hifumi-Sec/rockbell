@@ -1,0 +1,21 @@
+.header-text {
+    text-align: center;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 50px 50px 10px 10px;
+    transition: all .5s ease-in-out;
+}
+
+.card:hover {
+    transform: rotate(5deg);
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
