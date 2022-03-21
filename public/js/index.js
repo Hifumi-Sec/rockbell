@@ -3,16 +3,15 @@ console.log("Welcome to Rockbell!");
 window.addEventListener('DOMContentLoaded', event => {
 
     var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
+        const navCollapse = document.body.querySelector('#mainNav');
+        
+        if (!navCollapse) { return; }
+        
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navCollapse.classList.remove('navbar-shrink')
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navCollapse.classList.add('navbar-shrink')
         }
-
     };
 
     navbarShrink();
@@ -20,6 +19,7 @@ window.addEventListener('DOMContentLoaded', event => {
     document.addEventListener('scroll', navbarShrink);
 
     const mainNav = document.body.querySelector('#mainNav');
+    
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav',
@@ -28,9 +28,11 @@ window.addEventListener('DOMContentLoaded', event => {
     };
     
     const navbarToggler = document.body.querySelector('.navbar-toggler');
+
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
+
     responsiveNavItems.map(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
@@ -38,5 +40,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });

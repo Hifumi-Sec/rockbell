@@ -9,6 +9,8 @@ fn main() {
     let listener = TcpListener::bind("127.0.0.1:3005").unwrap();
     let pool = ThreadPool::new(5);
 
+    println!("Server currently listening on http://127.0.0.1:3005");
+
     // Listens for incoming connections on localhost:3005
     // hostname: 127.0.0.1
     // port: 3005
