@@ -1,7 +1,11 @@
-use std::thread;
-use std::sync::mpsc;
-use std::sync::Arc;
-use std::sync::Mutex;
+use std::{
+    thread,
+    sync::{
+        mpsc,
+        Arc,
+        Mutex,
+    }
+};
 
 // This script opens a ThreadPool to handle < 5 workers to protect from DoS attacks.
 
@@ -14,7 +18,7 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 
 enum Message {
     NewJob(Job),
-    Terminate,
+    Destroy,
 }
 
 impl ThreadPool {
@@ -42,16 +46,16 @@ impl ThreadPool {
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
-        println!("Sending termination request...");
+        println!("Sending termination request");
 
         for _ in &self.workers {
-            self.sender.send(Message::Terminate).unwrap();
+            self.sender.send(Message::Destroy).unwrap();
         }
 
-        println!("Shutting down all workers!");
+        println!("Shutting down all active workers");
 
         for worker in &mut self.workers {
-            println!("Working {} shutting down...", worker.id);
+            // println!("Worker {} shutting down", worker.id);
 
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
@@ -72,14 +76,12 @@ impl Worker {
 
             match message {
                 Message::NewJob(job) => {
-                    println!("Worker {} Executing", id);
-
+                    // println!("Worker {} executing", id);
                     job();
                 }
 
-                Message::Terminate => {
-                    println!("Worker {} Terminating", id);
-
+                Message::Destroy => {
+                    // println!("Worker {} Terminating", id);
                     break;
                 }
             }

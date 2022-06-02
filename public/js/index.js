@@ -2,7 +2,7 @@ console.log("Welcome to Rockbell!");
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    var navbarShrink = function () {
+    let navbarShrink = () => {
         const navCollapse = document.body.querySelector('#mainNav');
         
         if (!navCollapse) { return; }
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', event => {
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
 
-    responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItems.map((responsiveNavItem) => {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();

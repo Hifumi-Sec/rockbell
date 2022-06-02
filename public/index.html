@@ -17,7 +17,7 @@
     <body id="rockbell">
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#rockbell">Rockbell</a>
+                <a class="navbar-brand" href="/">Rockbell</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -42,7 +42,13 @@
                 <p class="masthead-subheading font-weight-light mb-0">Built in Rust!</p>
             </div>
             <br />
-            <iframe src="https://github.com/sponsors/Hifumi1337/card" title="Sponsor Hifumi1337" height="100px" width="600" style="background-color: #fff;border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"></iframe>
+            <iframe
+                src="https://github.com/sponsors/Hifumi1337/card"
+                title="Sponsor Hifumi1337"
+                height="100px"
+                width="600"
+                style="background-color: #fff;border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+            ></iframe>
         </header>
         <section class="page-section portfolio" style="background-color: #0C242B;" id="about">
             <div class="container">
@@ -60,21 +66,21 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-md-4 col-lg-3 mb-5 shadow-white portfolio-container" style="margin-left: 5px; margin-right: 5px;">
                             <div class="portfolio-item mx-auto">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
+                                <img class="img-fluid img-box" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
                             </div>
                             <br />
                             <h5>Rockbell can render HTML, CSS, and JS files with ease.</h5>
                         </div>
                         <div class="col-md-4 col-lg-3 mb-5 shadow-white portfolio-container" style="margin-left: 5px; margin-right: 5px;">
                           <div class="portfolio-item mx-auto">
-                              <img class="img-fluid" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
+                              <img class="img-fluid img-box" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
                           </div>
                           <br />
                           <h5>Simple local web server for ease of use.</h5>
                       </div>
                       <div class="col-md-4 col-lg-3 mb-5 shadow-white portfolio-container" style="margin-left: 5px; margin-right: 5px;">
                         <div class="portfolio-item mx-auto">
-                            <img class="img-fluid" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
+                            <img class="img-fluid img-box" src="https://raw.githubusercontent.com/Hifumi1337/rockbell/main/public/assets/featured.jpeg" alt="Winry Rockbell" />
                         </div>
                         <br />
                         <h5>Built in Rust</h5>
@@ -91,13 +97,19 @@
                       <div class="divider-custom-line"></div>
                   </div>
                   <div class="row">
-                      <div class="col-lg-12 ms-auto"><p class="lead">Rockbell is pretty easy to deploy! All you'll need is to make sure you have <a href="https://www.rust-lang.org/tools/install" style="color: #fff;" target="_blank">cargo</a> installed, and you're good to go.</p></div>
-                      <div class="col-lg-12 ms-auto"><p class="lead">Just make sure you are in the correct directory. As long as the cargo.toml file is present, you shouldn't have any issues running the server. Once the server is up, go to http://localhost:3005, and you can view this exact website!</p></div>
+                      <div class="col-lg-12 ms-auto"><p class="lead">Rockbell is pretty easy to deploy! All you'll need is to make sure you have <a href="https://www.rust-lang.org/tools/install" style="color: #fff;" target="_blank">cargo</a> installed and you're good to go.</p></div>
+                      <div class="col-lg-12 ms-auto"><p class="lead">As long as the cargo.toml file is present, you shouldn't have any issues running the server. Once the server is up, go to http://localhost:1337, and you can view this exact website. You don't even have to restart the server, just reload the browser and your changes should be immediately visible.</p></div>
                   </div>
                    <p class="lead shadow" style="padding: 10px;background-color: #0C242B;border-radius: 10px;">~$ cargo run</p>
                    <p class="lead">You should see the following confirmation:</p>
-                   <p class="lead shadow" style="padding: 10px;background-color: #0C242B;border-radius: 10px;">Finished dev [unoptimized + debuginfo] target(s) in 0.00s
-                  <br />Running `target/debug/main`</p>
+                   <p class="lead shadow" style="padding: 10px;background-color: #0C242B;border-radius: 10px;">
+                            Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+                            <br />Running `target/debug/main`<br />
+                            <br />Rockbell is currently listening on http://127.0.0.1:1337
+                    </p>
+                    <p>
+                        *You may receive a warning due to the `id` field. This can be ignored.
+                    </p>
               </div>
             </section>
 

@@ -1,11 +1,11 @@
 # Rockbell
 
-Multithreaded HTTP server built in Rust!
+Rockbell is a Multithreaded HTTP server built in Rust for local development. 
 
-Rockbell is a barebones HTTP (GET) server that renders HTML, CSS, and JS files.
+Rockbell is a barebones HTTP (GET) server that renders HTML, CSS, and JS files. Feel free to check out the `/public` directory to see what the server renders when running with cargo.
 
 ## Usage
-Running this command will boot up the server and automatically connect to port `3005`.
+Running this command will boot up the server and automatically connect to port `1337`.
 ```bash
 $ cargo run
 ```
