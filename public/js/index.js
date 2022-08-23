@@ -1,4 +1,8 @@
-console.log("Welcome to Rockbell!");
+const printIntro = () => {
+    console.log("Welcome to Rockbell!");
+}
+
+printIntro()
 
 window.addEventListener('DOMContentLoaded', event => {
 

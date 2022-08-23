@@ -4,7 +4,8 @@ use std::{
         mpsc,
         Arc,
         Mutex,
-    }
+    },
+    env
 };
 
 // This script opens a ThreadPool to handle < 5 workers to protect from DoS attacks.
@@ -55,7 +56,13 @@ impl Drop for ThreadPool {
         println!("Shutting down all active workers");
 
         for worker in &mut self.workers {
-            // println!("Worker {} shutting down", worker.id);
+
+            let args: Vec<String> = env::args().collect();
+            let query = &args[1];
+
+            if query == "debug" || query == "verbose" {
+                println!("Worker {} shutting down", worker.id);
+            }
 
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
@@ -74,14 +81,21 @@ impl Worker {
         let thread = thread::spawn(move || loop {
             let message = receiver.lock().unwrap().recv().unwrap();
 
+            let args: Vec<String> = env::args().collect();
+            let query = &args[1];
+
             match message {
                 Message::NewJob(job) => {
-                    // println!("Worker {} executing", id);
+                    if query == "debug" || query == "verbose" {
+                        println!("Worker {} executing", id);
+                    }
                     job();
                 }
 
                 Message::Destroy => {
-                    // println!("Worker {} Terminating", id);
+                    if query == "debug" || query == "verbose" {
+                        println!("Worker {} Terminating", id);
+                    }
                     break;
                 }
             }

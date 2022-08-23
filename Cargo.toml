@@ -1,6 +1,6 @@
 [package]
 name = "rockbell"
-version = "1.0.5"
+version = "1.0.6"
 authors = ["Hifumi1337"]
 edition = "2018"
 
