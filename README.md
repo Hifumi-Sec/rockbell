@@ -7,7 +7,7 @@ Rockbell is a barebones HTTP (GET) server that renders HTML, CSS, and JS files. 
 ## Installation
 You can install the crate via `Cargo` or by adding this line to your `Cargo.toml` file:
 ```bash
-rockbell = "0.0.1"
+rockbell = "0.0.2"
 ```
 
 ## Usage
