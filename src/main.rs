@@ -82,14 +82,17 @@ fn connection_handler(mut stream: TcpStream) {
     let query = &args[1];
 
     if query == "verbose" {
-        // cargo run -- verbose
+        // rockbell verbose
         println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
     } else if query == "debug" {
-        // cargo run -- debug
+        // rockbell debug
         println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
         println!("Response: {}", response);
     } else if query == "normal" {
-        // cargo run -- normal
+        // rockbell normal
+    } else {
+        println!("Missing query! Available commands: debug, verbose, normal");
+        std::process::exit(0);
     }
     
 }

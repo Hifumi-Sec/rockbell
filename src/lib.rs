@@ -89,6 +89,7 @@ impl Worker {
                     if query == "debug" || query == "verbose" {
                         println!("Worker {} executing", id);
                     }
+                    
                     job();
                 }
 
@@ -96,6 +97,7 @@ impl Worker {
                     if query == "debug" || query == "verbose" {
                         println!("Worker {} Terminating", id);
                     }
+
                     break;
                 }
             }
