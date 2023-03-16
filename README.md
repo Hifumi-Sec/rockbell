@@ -16,6 +16,8 @@ Running this command will boot up the server and automatically connect to port `
 rockbell normal
 ```
 
+You will need a directory called `public/` in the current working directory. This is how `rockbell` knows which HTML files to serve. There's an example of this in the repository under `public/*`.
+
 ## Command Line Options
 
 Starts the server in normal mode (no messages other than status codes and errors are printed)
