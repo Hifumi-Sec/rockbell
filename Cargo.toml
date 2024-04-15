@@ -2,11 +2,11 @@
 name = "rockbell"
 description = "Rockbell is a no dependencies multithreaded web server for building HTML and Markdown (coming soon) websites."
 version = "0.0.2"
-authors = ["azazelm3dj3d"]
+authors = ["battleoverflow"]
 edition = "2018"
 license = "BSD-2-Clause"
 categories = ["filesystem", "web-programming", "web-programming::http-server"]
 keywords = ["server", "web", "rockbell", "html"]
-repository = "https://github.com/azazelm3dj3d/rockbell"
+repository = "https://github.com/battleoverflow/rockbell"
 
 [dependencies]
