@@ -1,7 +1,7 @@
 [package]
 name = "rockbell"
 description = "Rockbell is a no dependencies multithreaded web server for building HTML and Markdown (coming soon) websites."
-version = "0.0.2"
+version = "0.0.3"
 authors = ["battleoverflow"]
 edition = "2018"
 license = "BSD-2-Clause"
